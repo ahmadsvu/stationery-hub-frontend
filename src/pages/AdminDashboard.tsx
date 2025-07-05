@@ -63,7 +63,7 @@ const Products = () => {
   const checkConnection = async () => {
     try {
       setConnectionStatus('checking');
-      const response = await fetch('http://localhost:5000/product/get', { 
+      const response = await fetch('https://stationery-hub-backend-production.up.railway.app/product/get', { 
         method: 'HEAD',
         signal: AbortSignal.timeout(5000)
       });
@@ -78,7 +78,7 @@ const Products = () => {
   const fetchProducts = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch('http://localhost:5000/product/get');
+      const response = await fetch('https://stationery-hub-backend-production.up.railway.app/product/get');
       if (!response.ok) throw new Error('Failed to fetch products');
       const data = await response.json();
       
@@ -139,7 +139,7 @@ const Products = () => {
         formData.append('image', imageFile);
       }
 
-      const response = await fetch('http://localhost:5000/product/add', {
+      const response = await fetch('https://stationery-hub-backend-production.up.railway.app/product/add', {
         method: 'POST',
         body: formData,
       });
@@ -193,7 +193,7 @@ const Products = () => {
         formData.append('image', imageFile);
       }
 
-      const response = await fetch(`http://localhost:5000/product/update/${editingProduct._id}`, {
+      const response = await fetch(`https://stationery-hub-backend-production.up.railway.app/product/update/${editingProduct._id}`, {
         method: 'PUT',
         body: formData,
       });
@@ -219,7 +219,7 @@ const Products = () => {
     if (!confirm('Are you sure you want to delete this product?')) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/product/delete/${id}`, {
+      const response = await fetch(`https://stationery-hub-backend-production.up.railway.app/product/delete/${id}`, {
         method: 'DELETE',
       });
 
@@ -335,7 +335,7 @@ const Products = () => {
                     <div className="h-10 w-10 flex-shrink-0">
                       <img 
                         className="h-10 w-10 rounded-full object-cover" 
-                        src={product.image.startsWith('http') ? product.image : `http://localhost:5000/uploads/${product.image}`}
+                        src={product.image.startsWith('http') ? product.image : `https://stationery-hub-backend-production.up.railway.app/uploads/${product.image}`}
                         alt={product.name}
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
@@ -607,7 +607,7 @@ const Products = () => {
                        editingProduct.image &&
                          (editingProduct.image.startsWith('http')
                           ? editingProduct.image
-                           : `http://localhost:5000/uploads/${editingProduct.image}`)
+                           : `https://stationery-hub-backend-production.up.railway.app/uploads/${editingProduct.image}`)
                         }
 
 
@@ -672,7 +672,7 @@ const BlogPosts = () => {
   const checkConnection = async () => {
     try {
       setConnectionStatus('checking');
-      const response = await fetch('http://localhost:5000/blog/getblogs', { 
+      const response = await fetch('https://stationery-hub-backend-production.up.railway.app/blog/getblogs', { 
         method: 'HEAD',
         signal: AbortSignal.timeout(5000)
       });
@@ -687,7 +687,7 @@ const BlogPosts = () => {
   const fetchPosts = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch('http://localhost:5000/blog/getblogs');
+      const response = await fetch('https://stationery-hub-backend-production.up.railway.app/blog/getblogs');
       if (!response.ok) throw new Error('Failed to fetch blog posts');
       const data = await response.json();
       
@@ -742,7 +742,7 @@ const BlogPosts = () => {
         formData.append('image', imageFile);
       }
 
-      const response = await fetch('http://localhost:5000/blog/addblogs', {
+      const response = await fetch('https://stationery-hub-backend-production.up.railway.app/blog/addblogs', {
         method: 'POST',
         body: formData,
       });
@@ -790,7 +790,7 @@ const BlogPosts = () => {
         formData.append('image', imageFile);
       }
 
-      const response = await fetch(`http://localhost:5000/blog/updateblog/${editingPost._id}`, {
+      const response = await fetch(`https://stationery-hub-backend-production.up.railway.app/blog/updateblog/${editingPost._id}`, {
         method: 'PUT',
         body: formData,
       });
@@ -816,7 +816,7 @@ const BlogPosts = () => {
     if (!confirm('Are you sure you want to delete this blog post?')) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/blog/deleteblog/${id}`, {
+      const response = await fetch(`https://stationery-hub-backend-production.up.railway.app/blog/deleteblog/${id}`, {
         method: 'DELETE',
       });
 
@@ -922,7 +922,7 @@ const BlogPosts = () => {
                 <div className="flex items-center gap-4 mb-2">
                   {post.image && (
                     <img
-                     src={post.image.startsWith('http') ? post.image : `http://localhost:5000/uploads/${post.image}`}
+                     src={post.image.startsWith('http') ? post.image : `https://stationery-hub-backend-production.up.railway.app/uploads/${post.image}`}
                       alt={post.title}
                       className="w-16 h-16 object-cover rounded-md"
                     />
@@ -1140,7 +1140,7 @@ const BlogPosts = () => {
                       editingPost.image &&
                       (editingPost.image.startsWith('http')
                       ? editingPost.image
-                       : `http://localhost:5000/uploads/${editingPost.image}`)
+                       : `https://stationery-hub-backend-production.up.railway.app/uploads/${editingPost.image}`)
                         }
                         alt="Preview"
                         className="w-32 h-20 object-cover rounded-md"
@@ -1195,7 +1195,7 @@ const Orders = () => {
   const checkConnection = async () => {
     try {
       setConnectionStatus('checking');
-      const response = await fetch('http://localhost:5000/api/getorders', { 
+      const response = await fetch('https://stationery-hub-backend-production.up.railway.app/api/getorders', { 
         method: 'HEAD',
         signal: AbortSignal.timeout(5000)
       });
@@ -1210,7 +1210,7 @@ const Orders = () => {
   const fetchOrders = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch('http://localhost:5000/api/getorders');
+      const response = await fetch('https://stationery-hub-backend-production.up.railway.app/api/getorders');
       
       if (!response.ok) throw new Error('Failed to fetch orders');
       
@@ -1269,7 +1269,7 @@ const Orders = () => {
     try {
       setIsLoadingOrder(true);
       
-      const response = await fetch(`http://localhost:5000/api/getorder/${order._id}`);
+      const response = await fetch(`https://stationery-hub-backend-production.up.railway.app/api/getorder/${order._id}`);
       console.log(response)
       if (response.ok) {
         const data = await response.json();
@@ -1536,7 +1536,7 @@ const AdminSettings = () => {
     setSuccess('');
 
     try {
-      const response = await fetch('http://localhost:5000/admin/update', {
+      const response = await fetch('https://stationery-hub-backend-production.up.railway.app/admin/update', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

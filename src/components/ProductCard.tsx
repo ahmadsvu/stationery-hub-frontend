@@ -20,7 +20,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
     >
       <div className="relative overflow-hidden">
         <img
-          src={product.image.startsWith('http') ? product.image : `http://localhost:5000/uploads/${product.image}`}
+          src={product.image.startsWith('http') ? product.image : `https://stationery-hub-backend-production.up.railway.app/uploads/${product.image}`}
           alt={product.name}
           className="w-full h-48 object-contain  group-hover:scale-105 transition-transform duration-300"
           onError={(e) => {

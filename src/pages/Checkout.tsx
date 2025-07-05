@@ -62,7 +62,7 @@ export const Checkout = () => {
       };
 
       // Send order to backend
-      const response = await fetch('http://localhost:5000/api/sendorder', {
+      const response = await fetch('https://stationery-hub-backend-production.up.railway.app/api/sendorder', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -229,7 +229,7 @@ export const Checkout = () => {
               {cart.map((product) => (
                 <div key={product._id} className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
                   <img
-                    src={product.image.startsWith('http') ? product.image : `http://localhost:5000/uploads/${product.image}`}
+                    src={product.image.startsWith('http') ? product.image : `https://stationery-hub-backend-production.up.railway.app/uploads/${product.image}`}
                     alt={product.name}
                     className="w-12 h-12 object-cover rounded-md"
                     onError={(e) => {

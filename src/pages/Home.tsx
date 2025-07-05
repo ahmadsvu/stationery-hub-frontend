@@ -27,7 +27,7 @@ export const Home = () => {
       try {
         setLoading(true);
         setError('');
-        const res = await fetch('http://localhost:5000/product/get'); 
+        const res = await fetch('https://stationery-hub-backend-production.up.railway.app/product/get'); 
         if (!res.ok) throw new Error('Failed to fetch products');
         const data = await res.json();
         

@@ -19,7 +19,7 @@ export const Blog = () => {
     const fetchBlogPosts = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/blog/getblogs');
+        const response = await fetch('https://stationery-hub-backend-production.up.railway.app/blog/getblogs');
         if (!response.ok) throw new Error('Failed to fetch blog posts');
         const data = await response.json();
         
@@ -77,7 +77,7 @@ export const Blog = () => {
                 <div className="md:flex-shrink-0">
                   <img
                     className="h-48 w-full md:w-48 object-contain "
-                    src={post.image.startsWith('http') ? post.image : `http://localhost:5000/uploads/${post.image}`}
+                    src={post.image.startsWith('http') ? post.image : `https://stationery-hub-backend-production.up.railway.app/uploads/${post.image}`}
                     alt={post.title}
                   />
                 </div>

@@ -91,7 +91,7 @@ export const Cart = () => {
                           className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg"
                         >
                           <img
-                            src={item.image.startsWith('http') ? item.image : `http://localhost:5000/uploads/${item.image}`}
+                            src={item.image.startsWith('http') ? item.image : `https://stationery-hub-backend-production.up.railway.app/uploads/${item.image}`}
                             alt={item.name}
                             className="w-16 h-16 object-cover rounded-md"
                             onError={(e) => {

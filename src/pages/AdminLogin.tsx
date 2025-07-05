@@ -28,8 +28,8 @@ export const AdminLogin = () => {
       
       // Try multiple endpoints to check server connectivity
       const endpoints = [
-        'http://localhost:5000/product/get',
-        'http://localhost:5000/blog/getblogs',
+        'https://stationery-hub-backend-production.up.railway.app/product/get',
+        'https://stationery-hub-backend-production.up.railway.app/blog/getblogs',
          // If you have a health check endpoint
       ];
 
@@ -80,7 +80,7 @@ export const AdminLogin = () => {
     try {
       console.log('Attempting login with:', { username: formData.username });
       
-      const response = await fetch('http://localhost:5000/admin/login', {
+      const response = await fetch('https://stationery-hub-backend-production.up.railway.app/admin/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
